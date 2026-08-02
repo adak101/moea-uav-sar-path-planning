@@ -1,0 +1,78 @@
+{
+  "ref": [
+    1.1,
+    1.1
+  ],
+  "method": "granice min/max f1,f2 per instancja WYLACZNIE z 9 zrodel uzytych w pracy (init + czynnikowy + strojenie per-algo); reprodukowalne z opisanych eksperymentow",
+  "n_archives_total": 2160,
+  "n_archives_missing": 0,
+  "norms": {
+    "tcB": {
+      "min_f1": 3255.4737715554716,
+      "max_f1": 4553.716149662837,
+      "min_f2": 0.12816701064750569,
+      "max_f2": 0.5755050900579773,
+      "n_points": 17777
+    },
+    "tcT": {
+      "min_f1": 3252.870057685089,
+      "max_f1": 5140.873740393779,
+      "min_f2": 0.20147216130366208,
+      "max_f2": 0.5877107877186231,
+      "n_points": 22578
+    },
+    "tcV": {
+      "min_f1": 3233.012705654892,
+      "max_f1": 5278.472920329107,
+      "min_f2": 0.1262055279027311,
+      "max_f2": 0.6185352720341287,
+      "n_points": 26326
+    },
+    "tcW": {
+      "min_f1": 3260.089985879451,
+      "max_f1": 4299.403743136163,
+      "min_f2": 0.07603847512218864,
+      "max_f2": 0.6108136859404026,
+      "n_points": 14010
+    },
+    "tcGB": {
+      "min_f1": 3163.2279576413316,
+      "max_f1": 4633.417610920611,
+      "min_f2": 0.11055621976085783,
+      "max_f2": 0.6203977734224673,
+      "n_points": 19148
+    },
+    "tcGL": {
+      "min_f1": 3181.8317199318226,
+      "max_f1": 5780.7873733904225,
+      "min_f2": 0.14612288977614085,
+      "max_f2": 0.5437941847472153,
+      "n_points": 26433
+    },
+    "tcLO": {
+      "min_f1": 3179.126146818829,
+      "max_f1": 4872.585550406076,
+      "min_f2": 0.1074606763082685,
+      "max_f2": 0.6081869683995775,
+      "n_points": 20850
+    },
+    "tcSW": {
+      "min_f1": 3177.007314487979,
+      "max_f1": 5584.745747757711,
+      "min_f2": 0.1206376853589719,
+      "max_f2": 0.612201479762714,
+      "n_points": 24394
+    }
+  },
+  "sources": [
+    "results/phase0_v2/sms_emoa_randinit_{inst}_u3_p100_e30000_s{seed}",
+    "results/phase1_v3/sms_emoa_{inst}_u3_p100_e30000_s{seed}",
+    "results/phase1_v3/nsga2_{inst}_u3_p100_e30000_s{seed}",
+    "results/phase1_v3/ss_nsga2_{inst}_u3_p100_e30000_s{seed}",
+    "results/phase1_v3/gen_sms_emoa_{inst}_u3_p100_e30000_s{seed}",
+    "results/phase2_tuned/sms_emoa_tuned_{inst}_u3_p108_e30000_s{seed}",
+    "results/tuning_per_algo/verification_runs/nsga2_tuned_{inst}_u3_p72_e30000_s{seed}",
+    "results/tuning_per_algo/verification_runs/ss_nsga2_tuned_{inst}_u3_p106_e30000_s{seed}",
+    "results/tuning_per_algo/verification_runs/gen_sms_emoa_tuned_{inst}_u3_p90_e30000_s{seed}"
+  ]
+}

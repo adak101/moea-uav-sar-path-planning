@@ -1,0 +1,176 @@
+PODSUMOWANIE — ABLACJA I STROJENIE OPERATORÓW MUTACJI GEN-SMS-EMOA
+Wygenerowano: 2026-07-21 13:54:37
+==============================================================================
+
+==============================================================================
+ZADANIE 0 — Przeliczenie ablacji leave-one-out (poprawna metoda)
+==============================================================================
+Krytyczne operatory (Friedman+Nemenyi): ['invert']
+Zbędne operatory: ['or_opt', 'transfer', 'swap', 'cross', 'exchange']
+Friedman: chi2=12.6964, p=0.0481
+Zgodność ze starą (poolowaną) analizą: True
+(a) Czy 'tylko invert krytyczny' utrzymuje się: TAK
+
+==============================================================================
+ZADANIE 1 — Ablacja zachłanna (backward elimination), ścieżka degradacji
+==============================================================================
+(b) Ścieżka degradacji:
+    poziom 6: ['invert', 'or_opt', 'transfer', 'swap', 'cross', 'exchange'] (usunięto: None)
+    poziom 5: ['invert', 'or_opt', 'transfer', 'swap', 'exchange'] (usunięto: cross)
+    poziom 4: ['invert', 'or_opt', 'swap', 'exchange'] (usunięto: transfer)
+    poziom 3: ['invert', 'or_opt', 'exchange'] (usunięto: swap)
+    poziom 2: ['invert', 'or_opt'] (usunięto: exchange)
+    poziom 1: ['invert'] (usunięto: or_opt)
+    PUNKT ZAŁAMANIA (parametry zamrożone): BRAK w zbadanym zakresie
+
+==============================================================================
+ZADANIE 2 — Strojenie irace per liczność operatorów
+==============================================================================
+Status poziomów:
+    level_1: {'done': True, 'pop': 106}
+    level_2: {'done': True, 'pop': 90}
+    level_3: {'done': True, 'pop': 75}
+    level_4: {'done': True, 'pop': 100}
+    level_5: {'done': True, 'pop': 76}
+
+--- Pełny raport Zadania 2 (results/tuning_per_count/tuning_per_count_report.txt) ---
+==============================================================================
+ZADANIE 2 — ANALIZA KOŃCOWA: STROJENIE PER LICZNOŚĆ OPERATORÓW
+GŁÓWNY test: Friedman + Nemenyi (instancje jako bloki)
+WSPIERAJĄCO: Wilcoxon per instancja + Holm + A + wins, każdy poziom vs poziom 6
+==============================================================================
+
+HV per instancja (wszystkie poziomy):
+Instancja            L6            L5            L4            L3            L2            L1
+---------------------------------------------------------------------------------------------
+tcB       1.0949±0.0163  1.0843±0.0154  1.0931±0.0179  1.0958±0.0178  1.0922±0.0136  1.0459±0.0177
+tcT       0.9579±0.0169  0.9655±0.0157  0.9702±0.0179  0.9742±0.0155  0.9722±0.0162  0.9615±0.0141
+tcV       0.9868±0.0118  0.9908±0.0129  0.9986±0.0106  1.0040±0.0087  0.9999±0.0111  0.9884±0.0098
+tcW       0.8853±0.1664  0.8207±0.1272  0.7975±0.1258  0.8301±0.1337  0.8121±0.1255  0.8324±0.1081
+tcGB      1.0357±0.0208  0.9688±0.0554  0.9857±0.0543  0.9812±0.0621  0.9873±0.0487  0.9579±0.0313
+tcGL      0.9108±0.0143  0.9087±0.0134  0.9179±0.0145  0.9210±0.0149  0.9287±0.0168  0.9076±0.0150
+tcLO      0.9875±0.0184  0.9678±0.0221  0.9829±0.0292  0.9866±0.0238  0.9742±0.0204  0.9722±0.0232
+tcSW      1.0043±0.0149  0.9991±0.0155  1.0131±0.0132  1.0203±0.0132  1.0082±0.0098  1.0019±0.0139
+---------------------------------------------------------------------------------------------
+Śr. ogólna  0.9829±0.0872  0.9632±0.0872  0.9699±0.0945  0.9767±0.0900  0.9718±0.0892  0.9585±0.0736
+
+Operatory per poziom:
+  L6 (pop=90): ['invert', 'or_opt', 'transfer', 'swap', 'cross', 'exchange']
+  L5 (pop=76): ['invert', 'or_opt', 'transfer', 'swap', 'exchange']
+  L4 (pop=100): ['invert', 'or_opt', 'swap', 'exchange']
+  L3 (pop=75): ['invert', 'or_opt', 'exchange']
+  L2 (pop=90): ['invert', 'or_opt']
+  L1 (pop=106): ['invert']
+
+Trening vs held-out per poziom:
+Poziom     trening  held-out         Δ
+L6          0.9835    0.9811   +0.0024
+L5          0.9568    0.9823   -0.0255
+L4          0.9626    0.9916   -0.0290
+L3          0.9698    0.9973   -0.0275
+L2          0.9657    0.9902   -0.0244
+L1          0.9507    0.9817   -0.0309
+
+==============================================================================
+GŁÓWNY TEST: FRIEDMAN + NEMENYI (6 poziomów x 8 instancji)
+==============================================================================
+chi^2(5) = 16.8571   p = 0.0048   (k=6 wariantów, N=8 instancji)
+Istotny (p<0.05)
+
+Średnie rangi (1 = najlepszy):
+  L3               1.8750
+  L2               2.8750
+  L6               3.1250
+  L4               3.2500
+  L5               4.8750
+  L1               5.0000
+
+CD (Nemenyi, alpha=0.05, k=6, N=8) = 2.6657
+
+Pary różniące się istotnie (Nemenyi p<0.05):
+  L5               vs L3                p=0.0169  |Δranga|=3.0000  ✓ ISTOTNE
+  L3               vs L1                p=0.0108  |Δranga|=3.1250  ✓ ISTOTNE
+
+==============================================================================
+WSPIERAJĄCO: każdy poziom vs poziom 6 (Wilcoxon per instancja + Holm)
+==============================================================================
+              Kontrast: L6 vs L5  [L6 vs L5]
+  Inst.    mean_A   mean_B        Δ         W         p       A  efekt     sig
+  ----------------------------------------------------------------------------
+  tcB      1.0949   1.0843  +0.0106     111.0    0.0113   0.699  średni      ✗
+  tcT      0.9579   0.9655  -0.0076     162.0    0.1519   0.373  mały        ✗
+  tcV      0.9868   0.9908  -0.0040     159.0    0.1347   0.434  mały        ✗
+  tcW      0.8853   0.8207  +0.0646     154.0    0.1094   0.618  mały        ✗
+  tcGB     1.0357   0.9688  +0.0669      19.0   <0.0001   0.909  duży        ✓
+  tcGL     0.9108   0.9087  +0.0022     206.0    0.5978   0.533  brak        ✗
+  tcLO     0.9875   0.9678  +0.0197      85.0    0.0017   0.768  duży        ✓
+  tcSW     1.0043   0.9991  +0.0053     174.0    0.2367   0.640  średni      ✗
+  ----------------------------------------------------------------------------
+  ŁĄCZNIE   0.9829   0.9632  +0.0197    9874.0   <0.0001   0.589  mały     wins_A=6/8   <-- POMOCNICZE (pooled 240 par, NIE podstawa wniosku)
+
+              Kontrast: L6 vs L4  [L6 vs L4]
+  Inst.    mean_A   mean_B        Δ         W         p       A  efekt     sig
+  ----------------------------------------------------------------------------
+  tcB      1.0949   1.0931  +0.0019     220.0    0.8078   0.506  brak        ✗
+  tcT      0.9579   0.9702  -0.0122     128.0    0.0310   0.314  średni      ✗
+  tcV      0.9868   0.9986  -0.0118      81.0    0.0012   0.240  duży        ✓
+  tcW      0.8853   0.7975  +0.0878     147.0    0.0803   0.642  średni      ✗
+  tcGB     1.0357   0.9857  +0.0500      43.0   <0.0001   0.781  duży        ✓
+  tcGL     0.9108   0.9179  -0.0070     147.0    0.0803   0.367  mały        ✗
+  tcLO     0.9875   0.9829  +0.0046     196.0    0.4645   0.526  brak        ✗
+  tcSW     1.0043   1.0131  -0.0088     146.0    0.0767   0.344  średni      ✗
+  ----------------------------------------------------------------------------
+  ŁĄCZNIE   0.9829   0.9699  +0.0131   13847.0    0.5691   0.536  brak     wins_A=4/8   <-- POMOCNICZE (pooled 240 par, NIE podstawa wniosku)
+
+              Kontrast: L6 vs L3  [L6 vs L3]
+  Inst.    mean_A   mean_B        Δ         W         p       A  efekt     sig
+  ----------------------------------------------------------------------------
+  tcB      1.0949   1.0958  -0.0009     218.0    0.7766   0.482  brak        ✗
+  tcT      0.9579   0.9742  -0.0163      89.0    0.0024   0.260  duży        ✓
+  tcV      0.9868   1.0040  -0.0172      23.0   <0.0001   0.118  duży        ✓
+  tcW      0.8853   0.8301  +0.0551     169.0    0.1981   0.604  mały        ✗
+  tcGB     1.0357   0.9812  +0.0546      62.0    0.0002   0.798  duży        ✓
+  tcGL     0.9108   0.9210  -0.0102     131.0    0.0364   0.322  średni      ✗
+  tcLO     0.9875   0.9866  +0.0009     215.0    0.7303   0.526  brak        ✗
+  tcSW     1.0043   1.0203  -0.0160      54.0   <0.0001   0.201  duży        ✓
+  ----------------------------------------------------------------------------
+  ŁĄCZNIE   0.9829   0.9767  +0.0063   12915.0    0.1513   0.511  brak     wins_A=3/8   <-- POMOCNICZE (pooled 240 par, NIE podstawa wniosku)
+
+              Kontrast: L6 vs L2  [L6 vs L2]
+  Inst.    mean_A   mean_B        Δ         W         p       A  efekt     sig
+  ----------------------------------------------------------------------------
+  tcB      1.0949   1.0922  +0.0027     195.0    0.4522   0.542  brak        ✗
+  tcT      0.9579   0.9722  -0.0142      79.0    0.0010   0.260  duży        ✓
+  tcV      0.9868   0.9999  -0.0131      47.0   <0.0001   0.200  duży        ✓
+  tcW      0.8853   0.8121  +0.0731     144.0    0.0699   0.637  mały        ✗
+  tcGB     1.0357   0.9873  +0.0485      17.0   <0.0001   0.839  duży        ✓
+  tcGL     0.9108   0.9287  -0.0179      55.0   <0.0001   0.206  duży        ✓
+  tcLO     0.9875   0.9742  +0.0133     128.0    0.0310   0.678  średni      ✗
+  tcSW     1.0043   1.0082  -0.0039     183.0    0.3184   0.433  mały        ✗
+  ----------------------------------------------------------------------------
+  ŁĄCZNIE   0.9829   0.9718  +0.0111   13928.0    0.6212   0.541  brak     wins_A=4/8   <-- POMOCNICZE (pooled 240 par, NIE podstawa wniosku)
+
+              Kontrast: L6 vs L1  [L6 vs L1]
+  Inst.    mean_A   mean_B        Δ         W         p       A  efekt     sig
+  ----------------------------------------------------------------------------
+  tcB      1.0949   1.0459  +0.0490       3.0   <0.0001   0.979  duży        ✓
+  tcT      0.9579   0.9615  -0.0035     179.0    0.2801   0.440  mały        ✗
+  tcV      0.9868   0.9884  -0.0016     203.0    0.5561   0.476  brak        ✗
+  tcW      0.8853   0.8324  +0.0529     161.0    0.1460   0.643  średni      ✗
+  tcGB     1.0357   0.9579  +0.0778       1.0   <0.0001   0.979  duży        ✓
+  tcGL     0.9108   0.9076  +0.0032     218.0    0.7766   0.549  brak        ✗
+  tcLO     0.9875   0.9722  +0.0153     123.0    0.0234   0.700  średni      ✗
+  tcSW     1.0043   1.0019  +0.0024     165.0    0.1706   0.572  mały        ✗
+  ----------------------------------------------------------------------------
+  ŁĄCZNIE   0.9829   0.9585  +0.0244    7670.0   <0.0001   0.620  mały     wins_A=6/8   <-- POMOCNICZE (pooled 240 par, NIE podstawa wniosku)
+
+
+Poziomy PRZEWYŻSZAJĄCE istotnie poziom 6 (Nemenyi): — żaden —
+
+==============================================================================
+ODPOWIEDZI KOŃCOWE
+==============================================================================
+(a) patrz ZADANIE 0 powyżej.
+(b) patrz ścieżka degradacji + punkt załamania w ZADANIU 1 powyżej.
+(c) OPTYMALNA LICZBA OPERATORÓW: patrz ZADANIE 2 — najmniejsza liczność nieistotnie gorsza od najlepszej w tabeli 'LICZNOŚĆ -> HV' i teście Nemenyi powyżej. BRAK DANYCH tutaj oznacza że trzeba odczytać wprost z raportu Zadania 2.
+(d) czy przestrojenie zmieniło obraz: porównaj punkt załamania z Zadania 1 (parametry zamrożone) z wynikiem 'poziomy przewyższające L6' i pozycją L1..L5 względem L6 w Zadaniu 2 powyżej — jeśli się różnią, jest to napisane wprost w sekcji Zadania 2.

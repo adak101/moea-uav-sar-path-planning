@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uav-moea"
+version = "1.0.0"
+description = "Wielokryterialne algorytmy ewolucyjne do planowania tras UAV w misjach poszukiwawczo-ratowniczych"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+validation = ["pymoo>=0.6"]   # tylko dla analysis/validate_engine.py (walidacja HV)
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["uav_moea*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"

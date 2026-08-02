@@ -1,0 +1,43 @@
+========================================================================================
+P1 — PLAN CZYNNIKOWY 2x2 na DOMYSLNYCH (phase1_v3), HV znormalizowane globalnie
+    kontrast per-instancja (blok) -> Wilcoxon signed-rank na 8 (Derrac §3.2)
+========================================================================================
+
+MEDIANY HV per instancja (30 ziaren -> mediana):
+Instancja       sms_emoa      ss_nsga2  gen_sms_emoa         nsga2
+------------------------------------------------------------------
+tcB               0.9499        0.9570        0.9680        0.9702
+tcT               0.9320        0.9272        0.9373        0.9372
+tcV               0.9597        0.9530        0.9681        0.9577
+tcW               0.6642        0.6831        0.8271        0.8394
+tcGB              0.8922        0.8991        0.9110        0.9068
+tcGL              0.8681        0.8594        0.8654        0.8651
+tcLO              0.9646        0.9755        0.9696        0.9680
+tcSW              0.9831        0.9795        0.9840        0.9793
+
+========================================================================================
+EFEKTY — kazdy = 8 wartosci kontrastu (po jednej na instancje)
+========================================================================================
+
+### ARCHITEKTURA (steady-state vs generacyjna)
+  kontrast/instancja (mediana): -0.0157 -0.0077 -0.0065 -0.1596 -0.0133 -0.0015 +0.0013 -0.0004
+  mediana efektu = -0.00710   znaki: 1 dodatnich / 7 ujemnych (z 8)
+  Wilcoxon signed-rank  p:  MEDIANA=0.0234   SREDNIA=0.0156   CRN(po ziarnie)=0.0156
+  Test znakow (Derrac §3.1)  p = 0.0703
+
+### SELEKCJA (HV vs crowding)
+  kontrast/instancja (mediana): -0.0047 +0.0024 +0.0085 -0.0155 -0.0013 +0.0045 -0.0046 +0.0041
+  mediana efektu = +0.00056   znaki: 4 dodatnich / 4 ujemnych (z 8)
+  Wilcoxon signed-rank  p:  MEDIANA=0.8438   SREDNIA=0.8438   CRN(po ziarnie)=0.8438
+  Test znakow (Derrac §3.1)  p = 1.0000
+
+### INTERAKCJA (czy efekt selekcji zalezy od architektury)
+  kontrast/instancja (mediana): -0.0048 +0.0047 -0.0037 -0.0066 -0.0112 +0.0084 -0.0125 -0.0010
+  mediana efektu = -0.00424   znaki: 2 dodatnich / 6 ujemnych (z 8)
+  Wilcoxon signed-rank  p:  MEDIANA=0.2500   SREDNIA=0.3828   CRN(po ziarnie)=0.3828
+  Test znakow (Derrac §3.1)  p = 0.2891
+
+----------------------------------------------------------------------------------------
+Uwaga o mocy: N=8 -> najnizsze osiagalne p (dwustr., Wilcoxon/znaki) = 2/2^8 = 0.0078.
+Znak dodatni: architektura -> steady-state lepszy; selekcja -> HV lepszy.
+========================================================================================

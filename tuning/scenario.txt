@@ -1,0 +1,12 @@
+targetRunner         = "target_runner.py"
+parameterFile        = "parameters.txt"
+trainInstancesDir    = "instances"
+testInstancesDir     = "test_instances"
+maxExperiments       = 5000
+seed                 = 2024
+parallel             = 4
+logFile              = "irace.log"
+targetRunnerRetries  = 1
+# Elite z ostatniej iteracji testowane na held-out (tcT, tcSW)
+testNbElites         = 3
+testIterationElites  = FALSE

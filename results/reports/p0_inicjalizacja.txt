@@ -1,0 +1,28 @@
+====================================================================================
+P0 — INICJALIZACJA: hybrydowa vs losowa (SMS-EMOA), HV znormalizowane globalnie
+====================================================================================
+Instancja    med.hyb   med.los   d (med)    sr.hyb    sr.los       A    efekt
+-----------------------------------------------------------------------------
+tcB           0.9499    0.3441   +0.6058    0.9564    0.3473   1.000     duzy
+tcT           0.9320    0.1924   +0.7396    0.9298    0.1942   1.000     duzy
+tcV           0.9597    0.2080   +0.7517    0.9592    0.2097   1.000     duzy
+tcW           0.6642    0.3990   +0.2653    0.7066    0.3946   1.000     duzy
+tcGB          0.8922    0.2480   +0.6442    0.8838    0.2483   1.000     duzy
+tcGL          0.8681    0.1487   +0.7194    0.8661    0.1506   1.000     duzy
+tcLO          0.9646    0.2498   +0.7148    0.9647    0.2514   1.000     duzy
+tcSW          0.9831    0.1809   +0.8022    0.9823    0.1813   1.000     duzy
+-----------------------------------------------------------------------------
+
+TEST GLOWNY — Wilcoxon signed-rank na 8 roznicach instancyjnych (Derrac §3.2):
+  agregacja MEDIANA:  W=0.0,  p=0.0078
+  agregacja SREDNIA:  W=0.0,  p=0.0078   (kontrola wrazliwosci na wybor agregatu)
+
+TEST ZNAKOW (Derrac §3.1, bez zalozenia symetrii):
+  hybryda wygrywa na 8/8 instancjach -> binomial p=0.0078
+
+WIELKOSC EFEKTU — Vargha-Delaney A (na ziarnach, per instancja):
+  mediana A=1.000  zakres=[1.000, 1.000]  (duzy)
+  A>0.5 na 8/8 instancji (A>0.5 = hybryda lepsza)
+
+Uwaga o mocy: przy N=8 najnizsze osiagalne p (dwustr.) to 2/2^8 = 0.0078.
+====================================================================================

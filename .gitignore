@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# Wyniki surowych przebiegów eksperymentów (generowane lokalnie, mogą mieć GB).
+# Repozytorium zawiera tylko kuratorski, mały zestaw wyników (results/global_norms.json,
+# results/ablation/, results/reports/) — reszta jest ignorowana.
+results/initialization/
+results/factorial/
+results/tuning/
+results/ablation/runs/
+results/**/results.json
+
+# irace (generowane)
+tuning/**/*.Rdata
+tuning/**/*.log
+tuning/**/execDir*/
+
+# System
+.DS_Store

@@ -1,0 +1,15 @@
+# Wagi operatorów mutacji + parametry algorytmiczne SMS-EMOA
+# Format: <nazwa> "<switch> " <typ> (<min>, <max>)
+
+# Wagi operatorów (z poprzedniego tuningu)
+w_invert   "--w_invert "   r (0.00, 1.00)
+w_or_opt   "--w_or_opt "   r (0.00, 1.00)
+w_transfer "--w_transfer " r (0.00, 1.00)
+w_swap     "--w_swap "     r (0.00, 1.00)
+w_cross    "--w_cross "    r (0.00, 1.00)
+w_exchange "--w_exchange " r (0.00, 1.00)
+
+# Parametry algorytmiczne (szeroki zakres)
+pop        "--pop "        i (50, 300)
+pc         "--pc "         r (0.00, 1.00)
+pm         "--pm "         r (0.00, 1.00)

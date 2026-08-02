@@ -1,0 +1,25 @@
+============================================================================================
+P2 — ODPORNOSC NA STROJENIE, HV znormalizowane globalnie, N=8 (parowanie po instancji)
+============================================================================================
+
+### P2a — czy strojenie pomaga kazdemu wariantowi (strojony vs domyslny)
+wariant           medΔHV   wins  Wilcoxon    Holm   znaki   medA    efekt
+-------------------------------------------------------------------------
+SMS-EMOA         +0.0230    7/8    0.0234  0.0625  0.0703  0.717     duzy
+NSGA-II          +0.0245    7/8    0.0156  0.0625  0.0703  0.751     duzy
+GEN-SMS-EMOA     +0.0254    7/8    0.0156  0.0625  0.0703  0.788     duzy
+SS-NSGA-II       +0.0072    6/8    0.2500  0.2500  0.2891  0.612     maly
+  (Â12 = P(strojony przebieg > domyslny);  medΔHV = mediana poprawy HV)
+
+### P2b — czy GEN > SS przezywa strojenie (pary z ta sama selekcja)
+    UWAGA: splatane z configiem irace -> robustness zalecenia, NIE czysty efekt czynnika.
+para (selekcja)                medΔHV   wins  Wilcoxon    Holm   znaki   medA    efekt
+--------------------------------------------------------------------------------------
+GEN-SMS - SMS (HV)            +0.0097    8/8    0.0078  0.0156  0.0078  0.634     maly
+NSGA-II - SS-NSGA (crowd)     +0.0157    8/8    0.0078  0.0156  0.0078  0.710   sredni
+  (Â12 = P(przebieg generacyjny > steady-state);  wins = na ilu instancjach gen lepszy)
+
+--------------------------------------------------------------------------------------------
+Uwaga o mocy: N=8 -> najnizsze osiagalne p (dwustr.) = 2/2^8 = 0.0078.
+Zrodlo efektu: Arcuri & Briand 2011/2014, Sek.7 (Â12 dla algorytmow stochastycznych).
+============================================================================================
