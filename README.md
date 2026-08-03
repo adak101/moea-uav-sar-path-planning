@@ -4,7 +4,7 @@ Wielokryterialne algorytmy ewolucyjne (MOEA) do planowania tras zespołu bezzał
 statków powietrznych (UAV) w misjach poszukiwawczo-ratowniczych (SAR). Repozytorium
 zawiera kompletny pipeline badawczy pracy magisterskiej: implementacje czterech
 wariantów algorytmów, cztery eksperymenty, strojenie hiperparametrów (irace) oraz
-analizę statystyczną z reprodukowalnymi figurami.
+analizę statystyczną z reprodukowalnymi rysunkami.
 
 > Praca magisterska (PDF): [`thesis/Wasko_Adam_praca_magisterska.pdf`](thesis/Wasko_Adam_praca_magisterska.pdf)
 
@@ -70,11 +70,11 @@ main.py              # punkt wejścia CLI (pojedynczy przebieg dowolnego wariant
 data/                # 8 instancji testowych (TC-PGI, TC-SP)
 experiments/         # 4 skrypty wsadowe (jeden na eksperyment)
 tuning/              # konfiguracja irace (parameters, scenario, target_runner)
-analysis/            # hv_stats + skrypty rysujące figury + walidacja silnika
+analysis/            # hv_stats + skrypty generujące rysunki + walidacja silnika
 examples/            # skrypty demonstracyjne (inicjalizacja, przykładowy przebieg)
 tests/               # testy jednostkowe (pytest)
 results/             # kuratorski, mały zestaw: global_norms.json, ablation_path.json, reports/
-figures/             # 5 finalnych figur z pracy (PDF + PNG)
+figures/             # 5 finalnych rysunków z pracy (PDF + PNG)
 thesis/              # praca magisterska (PDF)
 ```
 
@@ -103,7 +103,7 @@ Najważniejsze opcje: `--algo` (wariant), `--test-case` (instancja), `--eval`
 
 ## Reprodukcja wyników
 
-Figury w `figures/` są dołączone gotowe. Aby odtworzyć je od zera:
+Rysunki w `figures/` są dołączone gotowe. Aby odtworzyć je od zera:
 
 ```bash
 # 1. Uruchom eksperymenty (zapisują surowe przebiegi do results/*)
@@ -112,13 +112,13 @@ python experiments/run_factorial.py
 python experiments/run_tuning.py
 python experiments/run_ablation.py
 
-# 2. Wygeneruj figury (korzystają z results/global_norms.json)
+# 2. Wygeneruj rysunki (korzystają z results/global_norms.json)
 python analysis/plot_illustrations.py   # rozwiązanie, front Pareto, zbieżność inicjalizacji
 python analysis/plot_ablation.py        # ścieżka ablacji operatorów
 ```
 
-Figura zbieżności HV czterech wariantów (`figures/convergence.pdf`) jest dołączona
-gotowa. Poprawność silnika HV można sprawdzić skryptem
+Rysunek zbieżności HV czterech wariantów (`figures/convergence.pdf`) jest dołączony
+gotowy. Poprawność silnika HV można sprawdzić skryptem
 [`analysis/validate_engine.py`](analysis/validate_engine.py) (wymaga `pymoo`).
 
 > **Uwaga:** surowe przebiegi eksperymentów (setki archiwów `results.json`) są
@@ -130,9 +130,9 @@ gotowa. Poprawność silnika HV można sprawdzić skryptem
 
 ## Wyniki
 
-Kluczowe figury (w [`figures/`](figures/)):
+Kluczowe rysunki (w [`figures/`](figures/)):
 
-| Figura | Co pokazuje |
+| Rysunek | Co pokazuje |
 |--------|-------------|
 | `solution` | przykładowe rozwiązanie — trasy zespołu dronów |
 | `pareto` | front Pareto kompromisów f₁–f₂ |
