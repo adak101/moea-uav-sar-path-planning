@@ -39,7 +39,7 @@ def main():
 
     ax.set_xlabel("Liczba operatorów mutacji")
     ax.set_ylabel("Znormalizowane $HV$ (średnia po instancjach)")
-    ax.set_title("Ablacja operatorów — ścieżka greedy\n(baza: GEN-SMS-EMOA dostrojony)")
+    ax.set_title("Ablacja operatorów — ścieżka zachłanna\n(baza: GEN-SMS-EMOA dostrojony)")
     ax.set_xticks(n)
     ax.invert_xaxis()  # 6 po lewej, 1 po prawej (usuwanie operatorow w prawo)
     ax.grid(alpha=0.3, linestyle="--")
@@ -47,13 +47,9 @@ def main():
     ax.margins(y=0.12)
 
     for ext in ("pdf", "png"):
-        fig.savefig(REPO / f"results/thesis_ablation_path.{ext}", dpi=150,
+        fig.savefig(REPO / f"figures/ablation_path.{ext}", dpi=150,
                     bbox_inches="tight")
-    # kopia do figures/
-    import shutil
-    shutil.copy(REPO / "results/thesis_ablation_path.pdf",
-                REPO / "folder z magisterką/figures/thesis_ablation_path.pdf")
-    print("Zapisano thesis_ablation_path.pdf/.png (+ figures/)")
+    print("Zapisano figures/ablation_path.pdf/.png")
 
 
 if __name__ == "__main__":

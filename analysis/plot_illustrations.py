@@ -178,7 +178,7 @@ def plot_pareto_comparison():
     ax.set_ylim(min(all_f2) - f2_pad, max(all_f2) + f2_pad)
 
     ax.set_xlabel("$f_1$ — czas zakończenia misji [j.u.]", fontsize=11)
-    ax.set_ylabel("$f_2$ — wsp. nieodkrytego obszaru", fontsize=11)
+    ax.set_ylabel("$f_2$ — wsp. nieodkrytych ofiar", fontsize=11)
     ax.set_title(
         f"Fronty Pareto — SMS-EMOA domyślny vs dostrojony (irace)\n"
         f"instancja {INST}, ziarno {SEED}",
@@ -243,7 +243,7 @@ def plot_pareto_4algos():
     ax.set_ylim(min(all_f2) - f2_pad, max(all_f2) + f2_pad)
 
     ax.set_xlabel("$f_1$ — czas zakończenia misji [j.u.]", fontsize=11)
-    ax.set_ylabel("$f_2$ — wsp. nieodkrytego obszaru", fontsize=11)
+    ax.set_ylabel("$f_2$ — wsp. nieodkrytych ofiar", fontsize=11)
     ax.set_title(
         f"Fronty Pareto — 4 algorytmy, instancja {INST}, ziarno {SEED}",
         fontsize=12,
