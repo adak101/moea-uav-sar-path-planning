@@ -1,16 +1,16 @@
 # MOEA dla planowania tras UAV w misjach poszukiwawczo-ratowniczych
 
-Wielokryterialne algorytmy ewolucyjne (MOEA) do planowania tras floty bezzałogowych
+Wielokryterialne algorytmy ewolucyjne (MOEA) do planowania tras zespołu bezzałogowych
 statków powietrznych (UAV) w misjach poszukiwawczo-ratowniczych (SAR). Repozytorium
 zawiera kompletny pipeline badawczy pracy magisterskiej: implementacje czterech
 wariantów algorytmów, cztery eksperymenty, strojenie hiperparametrów (irace) oraz
 analizę statystyczną z reprodukowalnymi figurami.
 
-> Praca magisterska (PDF): [`thesis/praca-magisterska.pdf`](thesis/praca-magisterska.pdf)
+> Praca magisterska (PDF): [`thesis/Wasko_Adam_praca_magisterska.pdf`](thesis/Wasko_Adam_praca_magisterska.pdf)
 
 ## Problem
 
-Flota `k` dronów ma przeszukać obszar podzielony na regiony. Rozwiązaniem jest
+Zespół `k` dronów ma przeszukać obszar podzielony na regiony. Rozwiązaniem jest
 przydział regionów do dronów wraz z kolejnością odwiedzania. Oceniamy je **dwoma
 sprzecznymi kryteriami** (minimalizowanymi):
 
@@ -51,12 +51,12 @@ za pomocą ortogonalnych kontrastów.
 
 ```mermaid
 flowchart LR
-    D[data/ — instancje SAR] --> E[experiments/ — 4 eksperymenty]
-    E --> R[(results/ — surowe przebiegi)]
-    R --> N[global_norms.json — wspólna normalizacja HV]
-    N --> A[analysis/ — statystyki + figury]
-    A --> F[figures/ — figury do pracy]
-    T[tuning/ — irace] --> E
+    D["data/<br/>8 instancji SAR"] --> E["experiments/<br/>4 eksperymenty"]
+    T["tuning/<br/>strojenie irace"] --> E
+    E --> R["results/<br/>surowe przebiegi"]
+    R --> N["global_norms.json<br/>wspólna skala HV"]
+    N --> A["analysis/<br/>statystyki + wykresy"]
+    A --> F["figures/<br/>rysunki do pracy"]
 ```
 
 ## Struktura repozytorium
@@ -134,7 +134,7 @@ Kluczowe figury (w [`figures/`](figures/)):
 
 | Figura | Co pokazuje |
 |--------|-------------|
-| `solution` | przykładowe rozwiązanie — trasy floty dronów |
+| `solution` | przykładowe rozwiązanie — trasy zespołu dronów |
 | `pareto` | front Pareto kompromisów f₁–f₂ |
 | `convergence_init` | zbieżność: inicjalizacja hybrydowa vs losowa |
 | `convergence` | zbieżność HV czterech wariantów |
