@@ -6,8 +6,6 @@ zawiera kompletny pipeline badawczy pracy magisterskiej: implementacje czterech
 wariantów algorytmów, cztery eksperymenty, strojenie hiperparametrów (irace) oraz
 analizę statystyczną z reprodukowalnymi rysunkami.
 
-> Praca magisterska (PDF): [`thesis/Wasko_Adam_praca_magisterska.pdf`](thesis/Wasko_Adam_praca_magisterska.pdf)
-
 ## Problem
 
 Zespół `k` dronów ma przeszukać obszar podzielony na regiony. Rozwiązaniem jest
